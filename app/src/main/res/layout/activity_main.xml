@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.elyeproj.webappinteraction.MainActivity">
+
+    <WebView
+        android:id="@+id/my_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="180dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#aaa" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Android View"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/txt_from_web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Web Text"
+            android:textAlignment="center"
+            android:paddingBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_to_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="Text send to Web"
+            android:paddingBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_send_to_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="Send to Web"
+            android:paddingBottom="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
