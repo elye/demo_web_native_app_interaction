@@ -1,5 +1,7 @@
 package com.elyeproj.webappinteraction
 
+import android.content.pm.ApplicationInfo
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,6 +21,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if (0 != (applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE)) {
+                WebView.setWebContentsDebuggingEnabled(true)
+            }
+        }
 
         my_web_view.settings.javaScriptEnabled = true
         my_web_view.addJavascriptInterface(JavaScriptInterface(), JAVASCRIPT_OBJ)
