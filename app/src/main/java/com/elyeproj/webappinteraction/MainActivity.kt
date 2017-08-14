@@ -45,6 +45,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        my_web_view.removeJavascriptInterface(JAVASCRIPT_OBJ)
+        super.onDestroy()
+    }
+
     private fun injectJavaScriptFunction() {
         my_web_view.loadUrl("javascript: " +
                 "window.androidObj.textToAndroid = function(message) { " +
